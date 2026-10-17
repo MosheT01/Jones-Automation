@@ -1,6 +1,6 @@
 # Jones Playwright Automation
 
-A small Playwright project for the Jones Software engineering challenge. The current checkpoint is a browser smoke test that verifies the target landing page loads and displays its main heading.
+A small Playwright project for the Jones Software engineering challenge. It verifies that the target landing page loads and automates the contact form through its thank-you page and back-home link.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ npm ci
 npx playwright install chromium
 ```
 
-## Run the smoke test
+## Run the tests
 
 ```sh
 npm test
@@ -26,4 +26,6 @@ Run with a visible browser window:
 npm run test:headed
 ```
 
-The test targets <https://test.netlify.app/>. It currently verifies only the landing page heading; form entry, screenshot capture, submission, and success-state verification are not implemented yet.
+The contact form tests cover the complete flow with fictional data, including the bonus `51-500` employee selection, and a successful submission with the optional Company and Website fields left blank. The complete-flow test saves a full-page screenshot before submission under that test's Playwright output folder in `test-results/`.
+
+The tests target <https://test.netlify.app/>. The form submits using a GET request, so the fictional values appear in the resulting URL query string.

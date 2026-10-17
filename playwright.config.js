@@ -1,9 +1,10 @@
 const { defineConfig } = require('@playwright/test');
+const jones = require('./config/jones');
 
 module.exports = defineConfig({
   testDir: './tests',
   use: {
-    baseURL: 'https://test.netlify.app/',
+    baseURL: jones.url,
     browserName: 'chromium',
   },
 });

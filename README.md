@@ -32,6 +32,10 @@ Run with a visible browser window:
 npm run test:headed
 ```
 
+## Continuous integration
+
+GitHub Actions runs the Playwright suite on pushes to `main`, pull requests targeting `main`, and daily at 06:00 UTC. You can also start a run from the Actions tab with **Run workflow**. Each run uploads the HTML report for 14 days; failed runs also upload screenshots and traces for 14 days.
+
 The complete contact form test selects the bonus `51-500` employee value and saves a full-page screenshot before submitting. That screenshot is attached to the HTML report. The suite also checks that missing required fields, malformed email addresses, and malformed website URLs block submission, and that correcting invalid values allows submission.
 
 Playwright writes its HTML report to `playwright-report/` and failure screenshots and traces to `test-results/`. Open the report with:

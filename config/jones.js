@@ -20,6 +20,8 @@ module.exports = {
       email: 'alex@example.com',
       phone: '+1 555 010 0200',
     },
+    invalidEmail: 'not-an-email',
+    invalidWebsite: 'not-a-url',
   },
   employeeCount: {
     label: 'Number of Employees',

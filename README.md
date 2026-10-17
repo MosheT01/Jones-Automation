@@ -6,7 +6,7 @@ A small Playwright project for the Jones Software engineering challenge. The tes
 
 - `config/jones.js` - target URL, accessible labels, fictional test data, and expected page details.
 - `lib/formRunner.js` - configured text-field filling and form submission with success verification.
-- `tests/` - smoke and contact form scenarios, including optional-field coverage.
+- `tests/` - landing page, valid submission, optional-field, and native-validation scenarios.
 
 ## Requirements
 
@@ -32,6 +32,12 @@ Run with a visible browser window:
 npm run test:headed
 ```
 
-The complete contact form test selects the bonus `51-500` employee value and saves a full-page screenshot before submitting under that test's Playwright output folder in `test-results/`. The optional-field test leaves Company and Website blank and keeps the employee selector at its default. The tests verify the thank-you page; the complete-flow test also follows the back-home link.
+The complete contact form test selects the bonus `51-500` employee value and saves a full-page screenshot before submitting. That screenshot is attached to the HTML report. The suite also checks that missing required fields, malformed email addresses, and malformed website URLs block submission, and that correcting invalid values allows submission.
 
-The form submits using a GET request, so the fictional values appear in the resulting URL query string.
+Playwright writes its HTML report to `playwright-report/` and failure screenshots and traces to `test-results/`. Open the report with:
+
+```sh
+npx playwright show-report
+```
+
+Both output folders are ignored by Git and are refreshed by subsequent test runs. The form submits using a GET request, so the fictional values appear in the resulting URL query string.

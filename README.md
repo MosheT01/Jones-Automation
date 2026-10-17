@@ -4,6 +4,17 @@
 
 This repository is an implementation of the contact-form portion of the Jones Automation exercise. It tests the live page at <https://test.netlify.app/> with Playwright and Chromium. The test data is fictional.
 
+
+## Submission guide
+
+This repository contains the Playwright automation for the Jones contact-form exercise and a separate written review of the billing-form mockup. The project intentionally stays focused on the two parts of the assignment.
+
+- **Part 1 — Contact form automation:** follow [Run it locally](#run-it-locally) to install and execute the suite. The tests cover the required submission, pre-submit screenshot, bonus employee selection, thank-you confirmation, and return-home behavior, plus optional-field and validation cases.
+- **Part 2 — Billing mockup review:** read [answers/q2-billing-widget.md](answers/q2-billing-widget.md) for the findings, sample test cases, and proposed product solution.
+- **CI:** [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml) runs on pushes, pull requests, daily schedule, and manual dispatch.
+
+Repository: <https://github.com/MosheT01/Jones-Automation>
+
 ## The journey under test
 
 ```mermaid
